@@ -1,0 +1,31 @@
+# Blender MTL File: 'None'
+# Material Count: 3
+
+newmtl Material__13
+Ns 5.882353
+Ka 0.000000 0.000000 0.000000
+Kd 0.674510 0.624314 0.345098
+Ks 0.136471 0.131176 0.101765
+Ni 1.500000
+d 1.000000
+illum 2
+map_Bump -bm 0.373832 Map__6_Cellular.tga
+
+newmtl Paper_Gray
+Ns 21.568627
+Ka 0.000000 0.000000 0.000000
+Kd 0.743530 0.743530 0.743530
+Ks 0.040000 0.040000 0.040000
+Ni 1.500000
+d 0.950000
+illum 2
+map_Bump -bm 0.050000 Map__5_Cellular.tga
+
+newmtl mat_straw01
+Ns 47.058824
+Ka 0.000000 0.000000 0.000000
+Kd 0.156862 0.407843 0.156862
+Ks 0.765000 0.765000 0.765000
+Ni 1.500000
+d 1.000000
+illum 2

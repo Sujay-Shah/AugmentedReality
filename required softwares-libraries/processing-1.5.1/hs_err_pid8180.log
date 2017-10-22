@@ -1,0 +1,315 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d99aaf2, pid=8180, tid=2788
+#
+# JRE version: 6.0_24-b07
+# Java VM: Java HotSpot(TM) Client VM (19.1-b02 mixed mode windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0xfaaf2]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0257ac00):  JavaThread "Finalizer" daemon [_thread_in_vm, id=2788, stack(0x18810000,0x18860000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x00000000, EBX=0x18d91001, ECX=0x00000006, EDX=0x00000000
+ESP=0x1885f03c, EBP=0x1885f048, ESI=0x18d91028, EDI=0x0257ac00
+EIP=0x6d99aaf2, EFLAGS=0x00010206
+
+Register to memory mapping:
+
+EAX=0x00000000
+0x00000000 is pointing to unknown location
+
+EBX=0x18d91001
+0x18d91001 is pointing to unknown location
+
+ECX=0x00000006
+0x00000006 is pointing to unknown location
+
+EDX=0x00000000
+0x00000000 is pointing to unknown location
+
+ESP=0x1885f03c
+0x1885f03c is pointing into the stack for thread: 0x0257ac00
+"Finalizer" daemon prio=8 tid=0x0257ac00 nid=0xae4 runnable [0x1885f000]
+   java.lang.Thread.State: RUNNABLE
+
+EBP=0x1885f048
+0x1885f048 is pointing into the stack for thread: 0x0257ac00
+"Finalizer" daemon prio=8 tid=0x0257ac00 nid=0xae4 runnable [0x1885f000]
+   java.lang.Thread.State: RUNNABLE
+
+ESI=0x18d91028
+0x18d91028 is pointing to unknown location
+
+EDI=0x0257ac00
+"Finalizer" daemon prio=8 tid=0x0257ac00 nid=0xae4 runnable [0x1885f000]
+   java.lang.Thread.State: RUNNABLE
+
+
+Top of Stack: (sp=0x1885f03c)
+0x1885f03c:   1885f0d0 00000000 18d91028 1885f2b8
+0x1885f04c:   1a6042a8 0257ad18 18d91028 00000000
+0x1885f05c:   1885f070 1885f090 1885f094 00000020
+0x1885f06c:   1a604220 00000001 0257ac00 1885f32c
+0x1885f07c:   1885f070 0257ac00 1885f818 00000020
+0x1885f08c:   1a60420c ffffffff 1885f0a4 6d8a10e0
+0x1885f09c:   0257ac00 0257ac00 1885f0c8 1885f818
+0x1885f0ac:   1a6041ee 00000006 00000004 0257ac00 
+
+Instructions: (pc=0x6d99aaf2)
+0x6d99aae2:   ff 8b 75 0c 83 c4 08 85 f6 b3 01 74 3e 8b 45 10
+0x6d99aaf2:   8b 00 50 32 db e8 54 74 ff ff 83 c4 04 85 c0 74 
+
+
+Stack: [0x18810000,0x18860000],  sp=0x1885f03c,  free space=316k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0xfaaf2]
+C  0x1a6042a8
+C  0x1a604cae
+j  com.sun.jna.Function.invokeVoid(I[Ljava/lang/Object;)V+0
+J  com.sun.jna.Function.invoke([Ljava/lang/Object;Ljava/lang/Class;Z)Ljava/lang/Object;
+j  org.gstreamer.MiniObject.disposeNativeHandle(Lcom/sun/jna/Pointer;)V+4
+j  org.gstreamer.lowlevel.NativeObject.dispose()V+86
+j  org.gstreamer.lowlevel.NativeObject.finalize()V+49
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xf0ab9]
+V  [jvm.dll+0x1837d1]
+V  [jvm.dll+0xf0b3d]
+V  [jvm.dll+0xfa2e1]
+V  [jvm.dll+0xfcfc4]
+C  [java.dll+0x2100]
+J  java.lang.ref.Finalizer.runFinalizer()V
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xf0ab9]
+V  [jvm.dll+0x1837d1]
+V  [jvm.dll+0xf0c61]
+V  [jvm.dll+0xf0cbb]
+V  [jvm.dll+0x11b4b9]
+V  [jvm.dll+0x1e4624]
+V  [jvm.dll+0x18317c]
+C  [msvcr71.dll+0x9565]
+C  [kernel32.dll+0x13677]
+C  [ntdll.dll+0x39f42]
+C  [ntdll.dll+0x39f15]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.sun.jna.Function.invokeVoid(I[Ljava/lang/Object;)V+0
+J  com.sun.jna.Function.invoke([Ljava/lang/Object;Ljava/lang/Class;Z)Ljava/lang/Object;
+J  com.sun.jna.Function.invoke(Ljava/lang/Class;[Ljava/lang/Object;Ljava/util/Map;)Ljava/lang/Object;
+J  com.sun.jna.Library$Handler.invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;
+j  $Proxy6.gst_mini_object_unref(Lcom/sun/jna/Pointer;)V+16
+j  org.gstreamer.MiniObject.disposeNativeHandle(Lcom/sun/jna/Pointer;)V+4
+j  org.gstreamer.lowlevel.NativeObject.dispose()V+86
+j  org.gstreamer.lowlevel.NativeObject.finalize()V+49
+v  ~StubRoutines::call_stub
+J  java.lang.ref.Finalizer.invokeFinalizeMethod(Ljava/lang/Object;)V
+J  java.lang.ref.Finalizer.runFinalizer()V
+J  java.lang.ref.Finalizer.access$100(Ljava/lang/ref/Finalizer;)V
+j  java.lang.ref.Finalizer$FinalizerThread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x195b8400 JavaThread "Thread-1" daemon [_thread_in_native, id=7352, stack(0x20490000,0x204e0000)]
+  0x002cb400 JavaThread "DestroyJavaVM" [_thread_blocked, id=6968, stack(0x00210000,0x00260000)]
+  0x19533400 JavaThread "gstreamer service thread 1" daemon [_thread_blocked, id=3616, stack(0x1f030000,0x1f080000)]
+  0x18eb4800 JavaThread "Animation Thread" [_thread_blocked, id=2616, stack(0x19b10000,0x19b60000)]
+  0x18d49800 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=6956, stack(0x193a0000,0x193f0000)]
+  0x18e21800 JavaThread "AWT-Shutdown" [_thread_blocked, id=7704, stack(0x191c0000,0x19210000)]
+  0x18e21400 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=4272, stack(0x190e0000,0x19130000)]
+  0x025cd800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=9008, stack(0x18c00000,0x18c50000)]
+  0x025ca000 JavaThread "CompilerThread0" daemon [_thread_blocked, id=6740, stack(0x18b70000,0x18bc0000)]
+  0x025bec00 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=6620, stack(0x18ae0000,0x18b30000)]
+  0x025be000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=6416, stack(0x18a50000,0x18aa0000)]
+  0x025bc800 JavaThread "JDWP Transport Listener: dt_shmem" daemon [_thread_blocked, id=9120, stack(0x189c0000,0x18a10000)]
+  0x025b3000 JavaThread "Attach Listener" daemon [_thread_blocked, id=3932, stack(0x18930000,0x18980000)]
+  0x025b0800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3988, stack(0x188a0000,0x188f0000)]
+=>0x0257ac00 JavaThread "Finalizer" daemon [_thread_in_vm, id=2788, stack(0x18810000,0x18860000)]
+  0x02579800 JavaThread "Reference Handler" daemon [_thread_blocked, id=6224, stack(0x18780000,0x187d0000)]
+
+Other Threads:
+  0x02576000 VMThread [stack: 0x186f0000,0x18740000] [id=7584]
+  0x025d6800 WatcherThread [stack: 0x18c90000,0x18ce0000] [id=8996]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 744K [0x045e0000, 0x04b30000, 0x09b30000)
+  eden space 4416K,   5% used [0x045e0000, 0x0461a180, 0x04a30000)
+  from space 512K,  99% used [0x04a30000, 0x04aafff8, 0x04ab0000)
+  to   space 512K,   0% used [0x04ab0000, 0x04ab0000, 0x04b30000)
+ tenured generation   total 10944K, used 8758K [0x09b30000, 0x0a5e0000, 0x145e0000)
+   the space 10944K,  80% used [0x09b30000, 0x0a3bdb80, 0x0a3bdc00, 0x0a5e0000)
+ compacting perm gen  total 12288K, used 8648K [0x145e0000, 0x151e0000, 0x185e0000)
+   the space 12288K,  70% used [0x145e0000, 0x14e521e0, 0x14e52200, 0x151e0000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	D:\processing-1.5.1\java\bin\java.exe
+0x76ee0000 - 0x77060000 	C:\Windows\SysWOW64\ntdll.dll
+0x74df0000 - 0x74ef0000 	C:\Windows\syswow64\kernel32.dll
+0x74d00000 - 0x74d46000 	C:\Windows\syswow64\KERNELBASE.dll
+0x76a40000 - 0x76ae0000 	C:\Windows\syswow64\ADVAPI32.dll
+0x74b10000 - 0x74bbc000 	C:\Windows\syswow64\msvcrt.dll
+0x75e60000 - 0x75e79000 	C:\Windows\SysWOW64\sechost.dll
+0x768d0000 - 0x769c0000 	C:\Windows\syswow64\RPCRT4.dll
+0x74a50000 - 0x74ab0000 	C:\Windows\syswow64\SspiCli.dll
+0x74a40000 - 0x74a4c000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x7c340000 - 0x7c396000 	D:\processing-1.5.1\java\bin\msvcr71.dll
+0x6d8a0000 - 0x6db46000 	D:\processing-1.5.1\java\bin\client\jvm.dll
+0x76440000 - 0x76540000 	C:\Windows\syswow64\USER32.dll
+0x763b0000 - 0x76440000 	C:\Windows\syswow64\GDI32.dll
+0x76eb0000 - 0x76eba000 	C:\Windows\syswow64\LPK.dll
+0x750e0000 - 0x7517d000 	C:\Windows\syswow64\USP10.dll
+0x74830000 - 0x74862000 	C:\Windows\system32\WINMM.dll
+0x74ab0000 - 0x74b10000 	C:\Windows\system32\IMM32.DLL
+0x76760000 - 0x7682c000 	C:\Windows\syswow64\MSCTF.dll
+0x72c00000 - 0x72c4b000 	C:\Windows\system32\apphelp.dll
+0x747c0000 - 0x747f8000 	C:\Windows\SysWOW64\nvinit.dll
+0x6d850000 - 0x6d85c000 	D:\processing-1.5.1\java\bin\verify.dll
+0x6d3d0000 - 0x6d3ef000 	D:\processing-1.5.1\java\bin\java.dll
+0x6d330000 - 0x6d338000 	D:\processing-1.5.1\java\bin\hpi.dll
+0x768c0000 - 0x768c5000 	C:\Windows\syswow64\PSAPI.DLL
+0x6d420000 - 0x6d449000 	D:\processing-1.5.1\java\bin\jdwp.dll
+0x6d740000 - 0x6d746000 	D:\processing-1.5.1\java\bin\npt.dll
+0x6d890000 - 0x6d89f000 	D:\processing-1.5.1\java\bin\zip.dll
+0x6d2a0000 - 0x6d2a8000 	D:\processing-1.5.1\java\bin\dt_shmem.dll
+0x6d0b0000 - 0x6d1fa000 	D:\processing-1.5.1\java\bin\awt.dll
+0x74890000 - 0x748e1000 	C:\Windows\system32\WINSPOOL.DRV
+0x74f80000 - 0x750dc000 	C:\Windows\syswow64\ole32.dll
+0x73690000 - 0x7382e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.16385_none_421189da2b7fabfc\COMCTL32.dll
+0x75dd0000 - 0x75e27000 	C:\Windows\syswow64\SHLWAPI.dll
+0x72f10000 - 0x72f23000 	C:\Windows\system32\DWMAPI.DLL
+0x72f30000 - 0x72fb0000 	C:\Windows\system32\uxtheme.dll
+0x192a0000 - 0x192d9000 	C:\Program Files (x86)\Samsung\Easy Settings\WinCRT.dll
+0x76830000 - 0x768bf000 	C:\Windows\syswow64\OLEAUT32.dll
+0x6d2e0000 - 0x6d32f000 	D:\processing-1.5.1\java\bin\fontmanager.dll
+0x72ff0000 - 0x73006000 	C:\Windows\system32\CRYPTSP.dll
+0x72fb0000 - 0x72feb000 	C:\Windows\system32\rsaenh.dll
+0x74810000 - 0x74827000 	C:\Windows\system32\USERENV.dll
+0x74800000 - 0x7480b000 	C:\Windows\system32\profapi.dll
+0x6d6b0000 - 0x6d6c3000 	D:\processing-1.5.1\java\bin\net.dll
+0x75e80000 - 0x75eb5000 	C:\Windows\syswow64\WS2_32.dll
+0x75e30000 - 0x75e36000 	C:\Windows\syswow64\NSI.dll
+0x73410000 - 0x7344c000 	C:\Windows\system32\mswsock.dll
+0x72da0000 - 0x72da6000 	C:\Windows\System32\wship6.dll
+0x72230000 - 0x72240000 	C:\Windows\system32\NLAapi.dll
+0x72d50000 - 0x72d94000 	C:\Windows\system32\DNSAPI.dll
+0x66230000 - 0x66238000 	C:\Windows\System32\winrnr.dll
+0x66220000 - 0x66230000 	C:\Windows\system32\napinsp.dll
+0x66200000 - 0x66212000 	C:\Windows\system32\pnrpnsp.dll
+0x661f0000 - 0x661fd000 	C:\Windows\system32\wshbth.dll
+0x73400000 - 0x73405000 	C:\Windows\System32\wshtcpip.dll
+0x739e0000 - 0x739fc000 	C:\Windows\system32\IPHLPAPI.DLL
+0x739d0000 - 0x739d7000 	C:\Windows\system32\WINNSI.DLL
+0x72d30000 - 0x72d36000 	C:\Windows\system32\rasadhlp.dll
+0x72a30000 - 0x72a68000 	C:\Windows\System32\fwpuclnt.dll
+0x6d580000 - 0x6d692000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgio-2.0-0.dll
+0x685c0000 - 0x68707000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libglib-2.0-0.dll
+0x75180000 - 0x75dc9000 	C:\Windows\syswow64\SHELL32.DLL
+0x61cc0000 - 0x61cf6000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libintl-8.dll
+0x66000000 - 0x66104000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libiconv-2.dll
+0x6dd00000 - 0x6dd1e000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgmodule-2.0-0.dll
+0x63a40000 - 0x63a95000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgobject-2.0-0.dll
+0x65c40000 - 0x65c5f000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgthread-2.0-0.dll
+0x62e80000 - 0x62e9e000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\zlib1.dll
+0x19ba0000 - 0x19bd9000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstapp-0.10-0.dll
+0x6cac0000 - 0x6cb94000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstbase-0.10-0.dll
+0x6b6c0000 - 0x6b8d2000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstreamer-0.10-0.dll
+0x70f40000 - 0x710b9000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libxml2-2.dll
+0x70680000 - 0x706fd000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstaudio-0.10-0.dll
+0x64240000 - 0x64287000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstinterfaces-0.10-0.dll
+0x6f540000 - 0x6f581000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstbasevideo-0.10-0.dll
+0x62ac0000 - 0x62afd000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstvideo-0.10-0.dll
+0x19430000 - 0x1945e000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstcdda-0.10-0.dll
+0x637c0000 - 0x63828000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgsttag-0.10-0.dll
+0x625c0000 - 0x62625000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstcontroller-0.10-0.dll
+0x1a6c0000 - 0x1a6e1000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstdataprotocol-0.10-0.dll
+0x1a6f0000 - 0x1a721000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstfft-0.10-0.dll
+0x1a730000 - 0x1a75a000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstnet-0.10-0.dll
+0x6a200000 - 0x6a21d000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstnetbuffer-0.10-0.dll
+0x69f00000 - 0x69f57000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstpbutils-0.10-0.dll
+0x70ac0000 - 0x70ae2000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstphotography-0.10-0.dll
+0x70140000 - 0x7016d000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstriff-0.10-0.dll
+0x1a7b0000 - 0x1a802000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstrtp-0.10-0.dll
+0x69740000 - 0x69786000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstrtsp-0.10-0.dll
+0x628c0000 - 0x628e7000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstsdp-0.10-0.dll
+0x64a40000 - 0x64a67000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstsignalprocessor-0.10-0.dll
+0x1a860000 - 0x1a8b5000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libjpeg-8.dll
+0x6eb80000 - 0x6ec13000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libmp3lame-0.dll
+0x024b0000 - 0x024cf000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libogg-0.dll
+0x65680000 - 0x6572e000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\liborc-0.4-0.dll
+0x69d80000 - 0x69da1000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\liborc-test-0.4-0.dll
+0x61a00000 - 0x61a55000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libpng14-14.dll
+0x1a8c0000 - 0x1a926000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libtheora-0.dll
+0x65b40000 - 0x65b71000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libtheoradec-1.dll
+0x63100000 - 0x63158000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libtheoraenc-1.dll
+0x1a990000 - 0x1a9d4000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libvorbis-0.dll
+0x1aa90000 - 0x1ac1d000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libvorbisenc-2.dll
+0x6b3c0000 - 0x6b3e2000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libvorbisfile-3.dll
+0x69180000 - 0x691c9000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libwavpack-1.dll
+0x67b80000 - 0x67bae000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstadder.dll
+0x71100000 - 0x71123000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstadpcmdec.dll
+0x6a1c0000 - 0x6a1e3000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstadpcmenc.dll
+0x70c00000 - 0x70c37000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstaiff.dll
+0x61940000 - 0x6196b000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstalaw.dll
+0x70480000 - 0x704b5000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstalpha.dll
+0x6c200000 - 0x6c225000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstalphacolor.dll
+0x682c0000 - 0x6830e000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstannodex.dll
+0x64ec0000 - 0x64ee3000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstapetag.dll
+0x6ab80000 - 0x6ab9d000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstapp.dll
+0x70240000 - 0x7029f000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstasf.dll
+0x1ace0000 - 0x1ad2f000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstasfmux.dll
+0x6c140000 - 0x6c192000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstaudioconvert.dll
+0x69e40000 - 0x69eeb000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstaudiofx.dll
+0x67440000 - 0x6749c000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstaudioparsers.dll
+0x66e40000 - 0x66e67000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstaudiorate.dll
+0x6cf00000 - 0x6cf3d000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstaudioresample.dll
+0x62b80000 - 0x62baf000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstaudiotestsrc.dll
+0x63c80000 - 0x63ca5000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstauparse.dll
+0x6ba80000 - 0x6bab2000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstautoconvert.dll
+0x63f80000 - 0x63fbd000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstautodetect.dll
+0x62700000 - 0x62765000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstavi.dll
+0x6e8c0000 - 0x6e8ed000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstbayer.dll
+0x67f40000 - 0x67fb0000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstcamerabin.dll
+0x65040000 - 0x6506e000 	C:\Users\pc\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstcdxaparse.dll
+
+VM Arguments:
+jvm_args: -Xrunjdwp:transport=dt_shmem,address=127.0.0.1:8316,suspend=y -Djava.library.path=;C:\Users\pc\Documents\Processing\libraries\GSVideo\library;D:\processing-1.5.1\java\bin;.;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn;C:\Program Files\Microsoft SQL Server\100\Tools\Binn;C:\Program Files\Microsoft SQL Server\100\DTS\Binn;C:\Program Files (x86)\Java\jdk1.6.0_17\bin;c:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE;C:\Android\android-sdk-windows11\platform-tools;C:\Program Files\MATLAB\R2011a\runtime\win64;C:\Program Files\MATLAB\R2011a\bin;E:\fastboot\fastboot;C:\Program Files (x86)\QuickTime\QTSystem;D:\processing-1.5.1\java\bin -ea 
+java_command: processing.core.PApplet --editor-location=483,134 --external --display=0 --sketch-path=C:\Users\pc\Documents\Processing\libraries\GSVideo\examples\MovieMaker\Transcoding Transcoding
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=.;C:\Program Files (x86)\Java\jre7\lib\ext\QTJava.zip
+PATH=C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Java\jdk1.6.0_17\bin;c:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Android\android-sdk-windows11\platform-tools;C:\Program Files\MATLAB\R2011a\runtime\win64;C:\Program Files\MATLAB\R2011a\bin;E:\fastboot\fastboot;C:\Program Files (x86)\QuickTime\QTSystem\;D:\processing-1.5.1\java\bin
+USERNAME=pc
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 5019172k(2818560k free), swap 10036448k(5896900k free)
+
+vm_info: Java HotSpot(TM) Client VM (19.1-b02) for windows-x86 JRE (1.6.0_24-b07), built on Feb  2 2011 17:44:41 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Fri Nov 30 12:26:50 2012
+elapsed time: 8 seconds
+

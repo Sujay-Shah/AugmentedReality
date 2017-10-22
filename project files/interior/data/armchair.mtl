@@ -1,0 +1,12 @@
+# Blender MTL File: 'None'
+# Material Count: 1
+
+newmtl Leather__grey
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.683922 0.624314 0.520784
+Ks 0.043137 0.043137 0.043137
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd fabric-texture-12.jpg

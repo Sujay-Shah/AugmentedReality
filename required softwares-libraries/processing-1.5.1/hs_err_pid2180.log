@@ -1,0 +1,309 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x1aa935e0, pid=2180, tid=3988
+#
+# JRE version: 6.0_24-b07
+# Java VM: Java HotSpot(TM) Client VM (19.1-b02 mixed mode windows-x86 )
+# Problematic frame:
+# C  0x1aa935e0
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x01f2f400):  JavaThread "Finalizer" daemon [_thread_in_native, id=3988, stack(0x18270000,0x182c0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x1aa935e0
+
+Registers:
+EAX=0x1e47e138, EBX=0x00000000, ECX=0x047f7e38, EDX=0x01f2f518
+ESP=0x182bf6ec, EBP=0x182bf718, ESI=0x182bf708, EDI=0x01f2f400
+EIP=0x1aa935e0, EFLAGS=0x00010246
+
+Register to memory mapping:
+
+EAX=0x1e47e138
+0x1e47e138 is pointing to unknown location
+
+EBX=0x00000000
+0x00000000 is pointing to unknown location
+
+ECX=0x047f7e38
+com.sun.jna.Structure$AutoAllocated 
+ - klass: 'com/sun/jna/Structure$AutoAllocated'
+
+EDX=0x01f2f518
+0x01f2f518 is pointing to unknown location
+
+ESP=0x182bf6ec
+0x182bf6ec is pointing into the stack for thread: 0x01f2f400
+"Finalizer" daemon prio=8 tid=0x01f2f400 nid=0xf94 runnable [0x182bf000]
+   java.lang.Thread.State: RUNNABLE
+
+EBP=0x182bf718
+0x182bf718 is pointing into the stack for thread: 0x01f2f400
+"Finalizer" daemon prio=8 tid=0x01f2f400 nid=0xf94 runnable [0x182bf000]
+   java.lang.Thread.State: RUNNABLE
+
+ESI=0x182bf708
+0x182bf708 is pointing into the stack for thread: 0x01f2f400
+"Finalizer" daemon prio=8 tid=0x01f2f400 nid=0xf94 runnable [0x182bf000]
+   java.lang.Thread.State: RUNNABLE
+
+EDI=0x01f2f400
+"Finalizer" daemon prio=8 tid=0x01f2f400 nid=0xf94 runnable [0x182bf000]
+   java.lang.Thread.State: RUNNABLE
+
+
+Top of Stack: (sp=0x182bf6ec)
+0x182bf6ec:   02132c5b 01f2f518 182bf708 1e47e138
+0x182bf6fc:   00000000 182bf720 140a4fe0 146b9a40
+0x182bf70c:   14036708 00000000 182bf720 182bf76c
+0x182bf71c:   021329f1 1e47e138 00000000 147098d7
+0x182bf72c:   182bf750 047f7e38 00000000 182bf76c
+0x182bf73c:   01fb0364 182bf750 182bf76c 01fb0364
+0x182bf74c:   01fb0364 047f7e38 182bf77c 6d99038e
+0x182bf75c:   00001f80 01fb02ff 01f2f400 146b75d8 
+
+Instructions: (pc=0x1aa935e0)
+0x1aa935d0:   
+[error occurred during error reporting (printing registers, top of stack, instructions near pc), id 0xc0000005]
+
+Stack: [0x18270000,0x182c0000],  sp=0x182bf6ec,  free space=317k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x1aa935e0
+J  com.sun.jna.Memory.finalize()V
+V  [jvm.dll+0xf0ab9]
+V  [jvm.dll+0x1837d1]
+V  [jvm.dll+0xf0b3d]
+V  [jvm.dll+0xfa2e1]
+V  [jvm.dll+0xfcfc4]
+C  [java.dll+0x2100]
+J  java.lang.ref.Finalizer.runFinalizer()V
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xf0ab9]
+V  [jvm.dll+0x1837d1]
+V  [jvm.dll+0xf0c61]
+V  [jvm.dll+0xf0cbb]
+V  [jvm.dll+0x11b4b9]
+V  [jvm.dll+0x1e4624]
+V  [jvm.dll+0x18317c]
+C  [msvcr71.dll+0x9565]
+C  [KERNEL32.DLL+0x1495d]
+C  [ntdll.dll+0x498ee]
+C  [ntdll.dll+0x498c4]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J  com.sun.jna.Memory.free(J)V
+J  com.sun.jna.Memory.finalize()V
+v  ~StubRoutines::call_stub
+J  java.lang.ref.Finalizer.invokeFinalizeMethod(Ljava/lang/Object;)V
+J  java.lang.ref.Finalizer.runFinalizer()V
+J  java.lang.ref.Finalizer.access$100(Ljava/lang/ref/Finalizer;)V
+j  java.lang.ref.Finalizer$FinalizerThread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x01f83400 JavaThread "Thread-3" [_thread_in_vm, id=1296, stack(0x1ffc0000,0x20010000)]
+  0x01f82c00 JavaThread "Thread-1" daemon [_thread_blocked, id=1540, stack(0x1ff30000,0x1ff80000)]
+  0x01f82000 JavaThread "Thread-2" [_thread_blocked, id=4000, stack(0x1a3f0000,0x1a440000)]
+  0x1a76a400 JavaThread "gstreamer service thread 1" daemon [_thread_blocked, id=2696, stack(0x1fb20000,0x1fb70000)]
+  0x01eaa400 JavaThread "DestroyJavaVM" [_thread_blocked, id=3544, stack(0x00250000,0x002a0000)]
+  0x187fa000 JavaThread "D3D Screen Updater" daemon [_thread_blocked, id=3512, stack(0x1a640000,0x1a690000)]
+  0x188c5800 JavaThread "Animation Thread" [_thread_blocked, id=2424, stack(0x1a480000,0x1a4d0000)]
+  0x18822400 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=2196, stack(0x19a90000,0x19ae0000)]
+  0x187de000 JavaThread "AWT-Shutdown" [_thread_blocked, id=3968, stack(0x18f40000,0x18f90000)]
+  0x18884400 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=3936, stack(0x18eb0000,0x18f00000)]
+  0x01f76400 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=644, stack(0x18660000,0x186b0000)]
+  0x01f6bc00 JavaThread "CompilerThread0" daemon [_thread_blocked, id=2908, stack(0x185d0000,0x18620000)]
+  0x01f5d000 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=3068, stack(0x18540000,0x18590000)]
+  0x01f56c00 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=3892, stack(0x184b0000,0x18500000)]
+  0x01f53800 JavaThread "JDWP Transport Listener: dt_shmem" daemon [_thread_blocked, id=3612, stack(0x18420000,0x18470000)]
+  0x01f4ac00 JavaThread "Attach Listener" daemon [_thread_blocked, id=1284, stack(0x18390000,0x183e0000)]
+  0x01f48800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3760, stack(0x18300000,0x18350000)]
+=>0x01f2f400 JavaThread "Finalizer" daemon [_thread_in_native, id=3988, stack(0x18270000,0x182c0000)]
+  0x01f2a800 JavaThread "Reference Handler" daemon [_thread_blocked, id=3276, stack(0x181e0000,0x18230000)]
+
+Other Threads:
+  0x01f27000 VMThread [stack: 0x18150000,0x181a0000] [id=2720]
+  0x01f89c00 WatcherThread [stack: 0x186f0000,0x18740000] [id=2576]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 8832K, used 826K [0x04030000, 0x049c0000, 0x09580000)
+  eden space 7872K,   0% used [0x04030000, 0x04031460, 0x047e0000)
+  from space 960K,  85% used [0x047e0000, 0x048ad668, 0x048d0000)
+  to   space 960K,   0% used [0x048d0000, 0x048d0000, 0x049c0000)
+ tenured generation   total 19444K, used 15291K [0x09580000, 0x0a87d000, 0x14030000)
+   the space 19444K,  78% used [0x09580000, 0x0a46eef0, 0x0a46f000, 0x0a87d000)
+ compacting perm gen  total 12288K, used 9420K [0x14030000, 0x14c30000, 0x18030000)
+   the space 12288K,  76% used [0x14030000, 0x14963228, 0x14963400, 0x14c30000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin\java.exe
+0x77880000 - 0x779e8000 	C:\Windows\SYSTEM32\ntdll.dll
+0x758f0000 - 0x75a30000 	C:\Windows\SYSTEM32\KERNEL32.DLL
+0x754f0000 - 0x755bf000 	C:\Windows\SYSTEM32\KERNELBASE.dll
+0x74ee0000 - 0x74f7a000 	C:\Windows\system32\apphelp.dll
+0x74ae0000 - 0x74d32000 	C:\Windows\AppPatch\AcGenral.DLL
+0x776f0000 - 0x777ae000 	C:\Windows\SYSTEM32\msvcrt.dll
+0x75b50000 - 0x75b8e000 	C:\Windows\SYSTEM32\sechost.dll
+0x752b0000 - 0x752cd000 	C:\Windows\SYSTEM32\SspiCli.dll
+0x75390000 - 0x753d1000 	C:\Windows\SYSTEM32\SHLWAPI.dll
+0x750c0000 - 0x7519c000 	C:\Windows\SYSTEM32\UxTheme.dll
+0x775a0000 - 0x776f0000 	C:\Windows\SYSTEM32\USER32.dll
+0x75a40000 - 0x75b48000 	C:\Windows\SYSTEM32\GDI32.dll
+0x74fc0000 - 0x74fe0000 	C:\Windows\SYSTEM32\WINMM.dll
+0x750a0000 - 0x750b2000 	C:\Windows\SYSTEM32\samcli.dll
+0x773f0000 - 0x774fb000 	C:\Windows\SYSTEM32\ole32.dll
+0x753e0000 - 0x75467000 	C:\Windows\SYSTEM32\OLEAUT32.dll
+0x75080000 - 0x75095000 	C:\Windows\SYSTEM32\MSACM32.dll
+0x75070000 - 0x75078000 	C:\Windows\SYSTEM32\VERSION.dll
+0x75b90000 - 0x76d33000 	C:\Windows\SYSTEM32\SHELL32.dll
+0x75050000 - 0x75069000 	C:\Windows\SYSTEM32\USERENV.dll
+0x74e90000 - 0x74ea9000 	C:\Windows\SYSTEM32\dwmapi.dll
+0x749b0000 - 0x74ad1000 	C:\Windows\SYSTEM32\urlmon.dll
+0x75470000 - 0x754e7000 	C:\Windows\SYSTEM32\ADVAPI32.dll
+0x74950000 - 0x749ae000 	C:\Windows\SYSTEM32\WINSPOOL.DRV
+0x75030000 - 0x75044000 	C:\Windows\SYSTEM32\MPR.dll
+0x752d0000 - 0x75381000 	C:\Windows\SYSTEM32\RPCRT4.dll
+0x752a0000 - 0x752a9000 	C:\Windows\SYSTEM32\CRYPTBASE.dll
+0x76e90000 - 0x76fde000 	C:\Windows\SYSTEM32\combase.dll
+0x74fa0000 - 0x74fc0000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x74ed0000 - 0x74ede000 	C:\Windows\SYSTEM32\profapi.dll
+0x742c0000 - 0x744d5000 	C:\Windows\SYSTEM32\iertutil.dll
+0x740f0000 - 0x742b4000 	C:\Windows\SYSTEM32\WININET.dll
+0x75240000 - 0x75291000 	C:\Windows\SYSTEM32\bcryptPrimitives.dll
+0x77060000 - 0x7709a000 	C:\Windows\SYSTEM32\cfgmgr32.dll
+0x74f80000 - 0x74f9f000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x748d0000 - 0x74947000 	C:\Windows\SYSTEM32\SHCORE.DLL
+0x773c0000 - 0x773e5000 	C:\Windows\system32\IMM32.DLL
+0x770a0000 - 0x77197000 	C:\Windows\SYSTEM32\MSCTF.dll
+0x7c340000 - 0x7c396000 	C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin\msvcr71.dll
+0x6d8a0000 - 0x6db46000 	C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin\client\jvm.dll
+0x6d850000 - 0x6d85c000 	C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin\verify.dll
+0x6d3d0000 - 0x6d3ef000 	C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin\java.dll
+0x6d330000 - 0x6d338000 	C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin\hpi.dll
+0x76fe0000 - 0x76fe6000 	C:\Windows\SYSTEM32\PSAPI.DLL
+0x6d420000 - 0x6d449000 	C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin\jdwp.dll
+0x6d740000 - 0x6d746000 	C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin\npt.dll
+0x6d890000 - 0x6d89f000 	C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin\zip.dll
+0x6d2a0000 - 0x6d2a8000 	C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin\dt_shmem.dll
+0x6d0b0000 - 0x6d1fa000 	C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin\awt.dll
+0x746e0000 - 0x748c5000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.16384_none_a9f4965301334e09\COMCTL32.dll
+0x751a0000 - 0x751a9000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x6d2e0000 - 0x6d32f000 	C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin\fontmanager.dll
+0x746c0000 - 0x746d8000 	C:\Windows\SYSTEM32\CRYPTSP.dll
+0x74690000 - 0x746bf000 	C:\Windows\system32\rsaenh.dll
+0x74670000 - 0x7468d000 	C:\Windows\SYSTEM32\bcrypt.dll
+0x6d6b0000 - 0x6d6c3000 	C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin\net.dll
+0x75650000 - 0x7569d000 	C:\Windows\SYSTEM32\WS2_32.dll
+0x76ff0000 - 0x76ff7000 	C:\Windows\SYSTEM32\NSI.dll
+0x74fe0000 - 0x75025000 	C:\Windows\system32\mswsock.dll
+0x74e80000 - 0x74e90000 	C:\Windows\system32\napinsp.dll
+0x74e60000 - 0x74e74000 	C:\Windows\system32\pnrpnsp.dll
+0x74e40000 - 0x74e52000 	C:\Windows\system32\NLAapi.dll
+0x74dc0000 - 0x74e3c000 	C:\Windows\SYSTEM32\DNSAPI.dll
+0x74db0000 - 0x74db9000 	C:\Windows\System32\winrnr.dll
+0x74da0000 - 0x74daf000 	C:\Windows\system32\wshbth.dll
+0x74d40000 - 0x74d47000 	C:\Windows\System32\rasadhlp.dll
+0x74650000 - 0x7466e000 	C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x74ec0000 - 0x74ec8000 	C:\Windows\SYSTEM32\WINNSI.DLL
+0x74d50000 - 0x74d94000 	C:\Windows\System32\fwpuclnt.dll
+0x6d580000 - 0x6d692000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgio-2.0-0.dll
+0x685c0000 - 0x68707000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libglib-2.0-0.dll
+0x6dd00000 - 0x6dd1e000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgmodule-2.0-0.dll
+0x63a40000 - 0x63a95000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgobject-2.0-0.dll
+0x61cc0000 - 0x61cf6000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libintl-8.dll
+0x62e80000 - 0x62e9e000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\zlib1.dll
+0x65c40000 - 0x65c5f000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgthread-2.0-0.dll
+0x66000000 - 0x66104000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libiconv-2.dll
+0x1aaf0000 - 0x1ab29000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstapp-0.10-0.dll
+0x6cac0000 - 0x6cb94000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstbase-0.10-0.dll
+0x6b6c0000 - 0x6b8d2000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstreamer-0.10-0.dll
+0x70f40000 - 0x710b9000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libxml2-2.dll
+0x70680000 - 0x706fd000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstaudio-0.10-0.dll
+0x64240000 - 0x64287000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstinterfaces-0.10-0.dll
+0x6f540000 - 0x6f581000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstbasevideo-0.10-0.dll
+0x62ac0000 - 0x62afd000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstvideo-0.10-0.dll
+0x1ad20000 - 0x1ad4e000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstcdda-0.10-0.dll
+0x637c0000 - 0x63828000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgsttag-0.10-0.dll
+0x625c0000 - 0x62625000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstcontroller-0.10-0.dll
+0x1ad50000 - 0x1ad71000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstdataprotocol-0.10-0.dll
+0x1ad80000 - 0x1adb1000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstfft-0.10-0.dll
+0x1adc0000 - 0x1adea000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstnet-0.10-0.dll
+0x6a200000 - 0x6a21d000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstnetbuffer-0.10-0.dll
+0x69f00000 - 0x69f57000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstpbutils-0.10-0.dll
+0x70ac0000 - 0x70ae2000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstphotography-0.10-0.dll
+0x70140000 - 0x7016d000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstriff-0.10-0.dll
+0x1adf0000 - 0x1ae42000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstrtp-0.10-0.dll
+0x69740000 - 0x69786000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstrtsp-0.10-0.dll
+0x628c0000 - 0x628e7000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstsdp-0.10-0.dll
+0x64a40000 - 0x64a67000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libgstsignalprocessor-0.10-0.dll
+0x1b370000 - 0x1b3c5000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libjpeg-8.dll
+0x6eb80000 - 0x6ec13000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libmp3lame-0.dll
+0x1b3d0000 - 0x1b3ef000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libogg-0.dll
+0x65680000 - 0x6572e000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\liborc-0.4-0.dll
+0x69d80000 - 0x69da1000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\liborc-test-0.4-0.dll
+0x61a00000 - 0x61a55000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libpng14-14.dll
+0x1b3f0000 - 0x1b456000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libtheora-0.dll
+0x65b40000 - 0x65b71000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libtheoradec-1.dll
+0x63100000 - 0x63158000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libtheoraenc-1.dll
+0x1b460000 - 0x1b4a4000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libvorbis-0.dll
+0x1b4b0000 - 0x1b63d000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libvorbisenc-2.dll
+0x6b3c0000 - 0x6b3e2000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libvorbisfile-3.dll
+0x69180000 - 0x691c9000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\libwavpack-1.dll
+0x67b80000 - 0x67bae000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstadder.dll
+0x71100000 - 0x71123000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstadpcmdec.dll
+0x6a1c0000 - 0x6a1e3000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstadpcmenc.dll
+0x70c00000 - 0x70c37000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstaiff.dll
+0x61940000 - 0x6196b000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstalaw.dll
+0x70480000 - 0x704b5000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstalpha.dll
+0x6c200000 - 0x6c225000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstalphacolor.dll
+0x682c0000 - 0x6830e000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstannodex.dll
+0x64ec0000 - 0x64ee3000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstapetag.dll
+0x6ab80000 - 0x6ab9d000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstapp.dll
+0x70240000 - 0x7029f000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstasf.dll
+0x1b950000 - 0x1b99f000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstasfmux.dll
+0x6c140000 - 0x6c192000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstaudioconvert.dll
+0x69e40000 - 0x69eeb000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstaudiofx.dll
+0x67440000 - 0x6749c000 	C:\Users\2j\Documents\Processing\libraries\GSVideo\library\gstreamer\windows32\plugins\libgstaudioparsers.dll
+
+VM Arguments:
+jvm_args: -Xrunjdwp:transport=dt_shmem,address=127.0.0.1:8921,suspend=y -Djava.library.path=;C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\modes\java\libraries\video\library;C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\modes\java\libraries\opengl\library\windows32;C:\Users\2j\Documents\Processing\libraries\GSVideo\library;C:\Users\2j\Documents\Processing\libraries\NyARToolkit\library;C:\Users\2j\Documents\Processing\libraries\OBJLoader\library;C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin;.;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Parallels\Parallels Tools\Applications;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\QuickTime\QTSystem;C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin -ea 
+java_command: processing.core.PApplet --location=32,128 --external --display=1 --sketch-path=C:\Users\2j\Documents\Processing\_2d _2d
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=.;C:\Program Files (x86)\QuickTime\QTSystem\QTJava.zip
+PATH=C:\Program Files (x86)\Parallels\Parallels Tools\Applications;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Users\2j\Desktop\AR-CD\AR-CD\processing-1.5.1\java\bin
+USERNAME=2j
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 23 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.2 Build 9200 
+
+CPU:total 1 (1 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1
+
+Memory: 4k page, physical 2235956k(1193328k free), swap 2891316k(1421324k free)
+
+vm_info: Java HotSpot(TM) Client VM (19.1-b02) for windows-x86 JRE (1.6.0_24-b07), built on Feb  2 2011 17:44:41 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Sun Jan 04 14:40:53 2015
+elapsed time: 24 seconds
+
