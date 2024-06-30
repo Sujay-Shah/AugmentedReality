@@ -30,9 +30,11 @@ Note:-
 
 1) Alphabets.pde users can stop/start rotation by a simple mouse click. Furthermore, users can also view the object from any angle by dragging mouse. Only alphabets A-I can be viewed,
    rest have been commented. You can view rest by removing comments.
+
 https://github.com/Sujay-Shah/AugmentedReality/assets/16970214/ce8e0f86-a2fa-41f3-991e-94f07c2d5b8f
 
 2) In ads.pde users can pause/play video by simple mouse click.
+
 https://github.com/Sujay-Shah/AugmentedReality/assets/16970214/a3acb3f9-69dd-43a0-ba72-5d8616cc9376
 
 3)In interior.pde users can click to change the 3D object. Objects can be scaled up or down in size by pressing '↑' or '↓'.
